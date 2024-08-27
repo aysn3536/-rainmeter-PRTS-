@@ -1,0 +1,157 @@
+'use strict';
+
+let timeofcrusordown = 0;//刷新的瞬时时间
+let i = 0;//字符串逐个读取指针
+let cursorLdown = 0;
+let random_voice = 0;
+let windows_bool = true;
+let sleeptime = 60;
+let old_random_voice = 0;
+const voice_array = [
+	'欢迎回家，博士！',
+	//
+	'凯尔希医生教导过我，工作的时候一定要保持全神\n贯注……嗯，全神贯注。',
+	'罗德岛全舰正处于通常航行状态。博士，整理下航\n程信息吧？',
+	'作为罗德岛的领导者我还有很多不成熟的地方，希\n望您能更多地为我指明前进的方向。',
+	'虽然这可能是我一厢情愿的想法，但我希望罗德岛\n能成为大家的第二个故乡……',
+	'我们失去了很多才走到今天。有时候我会问自己，\n这一切真的值得么……？',
+	'有时候，我会想起寒冷的家乡，那里就连空气中都\n弥漫着铜锈的味道。相比之下罗德岛是如此的温暖\n。所以，为了守护好这里，我必须更加努力才行。',
+	'嘿嘿，博士，悄悄告诉你一件事——我重新开始练小\n提琴了。',
+	'博士，我们的脚下，是一条漫长的道路……也许这是\n一次没有终点的旅行，但如果是和您一起，我觉得\n，非常幸福。',
+	//
+	"博士，您还有许多事情需要处理。现在还不能休息\n哦。",
+	'欸？博士？'
+];
+
+const voice_name_array = [
+	'问候.wav',//0
+	//
+	'交谈1.wav',
+	'交谈2.wav',
+	'交谈3.wav',
+	'晋升后交谈1.wav',
+	'晋升后交谈2.wav',
+	'信赖提升后交谈1.wav',
+	'信赖提升后交谈2.wav',
+	'信赖提升后交谈3.wav',
+	//
+	'闲置.wav',
+	'戳一下.wav'//10
+];
+let cursor_x = 0;//input.cursorScreenPosition.x;
+let cursor_y = 0;
+
+//初始化，每次启动播放也仅播放一遍问候。
+
+
+
+let x = 1;
+let y = 0;
+let deltaTime = 0;
+let easyAnimation = false;
+
+export function init() {
+	thisScene.getLayer(voice_name_array[random_voice]).play();
+}
+
+export function update() {
+	const time = engine.runtime;//每次循环时的当前时间
+	//条件判断：如果闲置时间过长，触发闲置语音。触发后无操作10分钟后再次触发。
+	if(time-timeofcrusordown>sleeptime){
+		random_voice = 9;//采用9号语音文件
+		windows_bool = true;//启用对话窗口
+		thisScene.getLayer(voice_name_array[random_voice]).play();//播放语音
+		old_random_voice = 9;
+		i = 0;//字符串指针归位
+		//thisScene.getLayer('聊天背景').visible = true;
+		timeofcrusordown = time + 1200;//将鼠标按下时间修改至未来，以便在未来一段时间内不再出现闲置语音
+
+	}
+	//条件判断：如果鼠标按下，那么设定鼠标按下值为1
+	if (input.cursorLeftDown){
+		cursorLdown = 1;
+	}
+	//条件判断：触发单次鼠标点击效果（松开后触发，仅触发一次）
+	if (!input.cursorLeftDown && cursorLdown == 1){
+		cursorLdown = 0;
+		cursor_x = input.cursorScreenPosition.x/engine.screenResolution.x;
+		cursor_y = input.cursorScreenPosition.y/engine.screenResolution.y;
+		if(cursor_x<0.4049479&&cursor_x>0.3346875&&cursor_y<0.35185185&&cursor_y>0.2083333){
+			easyAnimation = true;
+			i = 0;
+			windows_bool = true;
+			random_voice = 10;
+			thisScene.getLayer(voice_name_array[old_random_voice]).stop();
+			thisScene.getLayer(voice_name_array[random_voice]).play();
+			old_random_voice = random_voice;
+			//console.log("hhhh");
+		}
+		else{
+			easyAnimation = false;
+			//console.log("aaaa");
+			//条件判断：如果两次点击间隔较短（小于1秒），视为无效点击
+			i = 0;
+			windows_bool = !windows_bool; //状态控制：切换是否显示文本框（若文本框开启，则单点鼠标左键关闭。若关闭，则开启）
+			//条件判断：如果windows_bool状态为true，打开聊天背景窗口，并播放指定语音（仅一次）
+			if(windows_bool){
+				//console.log(voice_name_array[old_random_voice]);
+				thisScene.getLayer(voice_name_array[old_random_voice]).stop();
+				//console.log(voice_name_array[random_voice]);
+				thisScene.getLayer(voice_name_array[random_voice]).play();
+				old_random_voice = random_voice;
+			}
+		}
+		timeofcrusordown = time;
+	}
+
+	//条件判断：如果需要输出字符串（持续状态）
+	if (windows_bool){
+		thisScene.getLayer('聊天背景').visible = true;
+		//循环输出字符串
+		//console.log(voice_array[random_voice]);
+		if (i <= 2 * voice_array[random_voice].length){
+			i++;
+			return(voice_array[random_voice].slice(0, i/2));
+		}
+		if(easyAnimation){
+			deltaTime = time - timeofcrusordown
+
+			if(deltaTime < 1){
+				if (deltaTime<0.4){
+					console.log(deltaTime);
+					y = -400*(deltaTime-0.2)*(deltaTime-0.2) + 16;
+				}
+				thisScene.getLayer('立绘_阿米娅_11').origin = new Vec3(708.1153,377.17578+y, 0);
+				thisScene.getLayer('立绘_阿米娅_1').origin = new Vec3(707,380+y, 0);
+
+				if(x<1){
+					x+=0.1;
+					thisScene.getLayer('立绘_阿米娅_11').alpha = x;
+				}
+			}
+			else{
+				if(x>0){
+					x-=0.1;
+					thisScene.getLayer('立绘_阿米娅_11').alpha = x;
+				}
+			}
+		}
+	}
+	//条件判断：如果不需要输出字符串（持续状态）
+	else{
+		random_voice = Math.floor(Math.random()*8)+1; //获取1，2，3。。。8中的一个随机数
+		thisScene.getLayer('聊天背景').visible = false;
+		return '';
+	}
+}
+/**
+ * @param {String} value - for property 'text'
+ * @return {String} - update current property value
+ */
+
+/**
+ * @param {CursorEvent} event
+ */
+export function cursorClick(event) {
+	
+}
