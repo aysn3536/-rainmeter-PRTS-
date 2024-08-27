@@ -1,25 +1,23 @@
-#rainmeter PRTS 组件自述
-##概述
+# rainmeter PRTS 组件自述
+## 概述
 欢迎使用rainmeter PRTS组件，这是一个动态和交互式的rainmeter皮肤，旨在增强您的桌面体验。此组件是专门为与壁纸引擎中的相应壁纸PRTS配套使用。为了获得最佳功能，请确保安装了匹配的壁纸。
-###特点
--显示Steam上最近玩过的三款游戏。
--显示计算机硬盘上的剩余存储空间。
--显示您当前的IP地址。
--包括透明快捷方式，便于快速访问。
-##安装和使用
-1.**壁纸引擎壁纸**：确保您已从壁纸引擎创意工作室安装了相应的壁纸。该链接将在正式发布后提供。
-2.**教程视频**：Bilibili上将提供分步教程视频，便于设置和配置。
-###定制化
--**快捷方式**：Rainmeter组件带有默认快捷方式。您可能需要修改代码中的文件路径以匹配计算机的设置。
--**组件定位**：组件的位置可能会受到显示器分辨率的影响。可能需要调整以获得最佳位置。
--**透明度**：为了获得最佳的视觉效果，建议将组件修改为透明，并确保启用“无拖动”选项，以防止在使用过程中意外移动。
-###兼容性
+### 特点
+- 显示Steam上最近玩过的三款游戏。
+- 显示计算机硬盘上的剩余存储空间。
+- 显示您当前的IP地址。
+- 包括透明快捷方式，便于快速访问。
+## 安装和使用
+1. **壁纸引擎壁纸**：确保您已从壁纸引擎创意工作室安装了相应的壁纸。该链接将在正式发布后提供。
+2. **教程视频**：Bilibili上将提供分步教程视频，便于设置和配置。
+### 定制化
+- **快捷方式**：Rainmeter组件带有默认快捷方式。您可能需要修改代码中的文件路径以匹配计算机的设置。
+- **组件定位**：组件的位置可能会受到显示器分辨率的影响。可能需要调整以获得最佳位置。
+- **透明度**：为了获得最佳的视觉效果，建议将组件修改为透明，并确保启用“无拖动”选项，以防止在使用过程中意外移动。
+### 兼容性
 -**硬盘配置**：请注意，该组件默认设置为识别C、D和E驱动器。如果您的配置不同，您可能需要相应地调整代码中的参数。
 -**Steam数据访问**：一些用户报告了访问Steam数据的问题。我们正在积极调查并努力解决代码中的这些问题。
 
-
-
-##许可证
+## 许可证
 
 该项目是开源的，可在[MIT许可证]（License）下使用。只要您遵守许可条款，就可以自由使用、修改和分发该组件。
 
@@ -54,7 +52,7 @@ Welcome to the rainmeter component, a dynamic and interactive Rainmeter skin des
 - **Steam Data Retrieval**: A small subset of users have experienced difficulties in retrieving data from the Steam web API. We are diligently working on a solution.
 
 ## Support and Updates
-For any queries, suggestions, or bug reports, please feel free to open an issue on this repository. We appreciate your feedback and are committed to improving the Raindrop Component.
+For any queries, suggestions, or bug reports, please feel free to open an issue on this repository. We appreciate your feedback and are committed to improving the Rainmeter Component.
 
 ## Contributing
 If you'd like to contribute to the development of the Raindrop Component, please submit a pull request. We welcome all contributions that align with our project's goals and coding standards.
@@ -64,4 +62,4 @@ This project is open-source and available under the [MIT License](LICENSE). Feel
 
 ---
 
-Thank you for choosing the Raindrop Component. We hope it enhances your desktop experience and look forward to your feedback!
+Thank you for choosing the Rainmeter Component. We hope it enhances your desktop experience and look forward to your feedback!
