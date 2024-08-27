@@ -7,7 +7,7 @@
 - 显示您当前的IP地址。
 - 包括透明快捷方式，便于快速访问。
 ## 安装和使用
-1. **壁纸引擎壁纸**：确保您已从壁纸引擎创意工作室安装了相应的壁纸。该链接将在正式发布后提供。
+1. **壁纸引擎壁纸**：确保您已从壁纸引擎创意工作室安装了相应的壁纸。[创意工坊链接](https://steamcommunity.com/sharedfiles/filedetails/?id=3318573235)。
 2. **教程视频**：Bilibili上将提供分步教程视频，便于设置和配置。
 ### 定制化
 - **快捷方式**：Rainmeter组件带有默认快捷方式。您可能需要修改代码中的文件路径以匹配计算机的设置。
@@ -36,7 +36,7 @@ Welcome to the rainmeter component, a dynamic and interactive Rainmeter skin des
 - Includes transparent shortcuts for quick access.
 
 ## Installation and Usage
-1. **Wallpaper Engine Wallpaper**: Ensure you have the corresponding wallpaper installed from the Wallpaper Engine Creative Workshop. The link will be provided upon official release.
+1. **Wallpaper Engine Wallpaper**: Ensure you have the corresponding wallpaper installed from the Wallpaper Engine Creative Workshop.[workshop link](https://steamcommunity.com/sharedfiles/filedetails/?id=3318573235)
 2. **Tutorial Video**: A step-by-step tutorial video will be available on Bilibili for easy setup and configuration.
 
 ### Customization
