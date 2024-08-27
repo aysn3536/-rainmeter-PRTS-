@@ -19,7 +19,7 @@
 
 ## 许可证
 
-该项目是开源的，可在[MIT许可证]（License）下使用。只要您遵守许可条款，就可以自由使用、修改和分发该组件。
+Closure Commons 署名-不许获利-传递下去 4.0
 
 ---
 # warning: Machine translation
@@ -58,7 +58,7 @@ For any queries, suggestions, or bug reports, please feel free to open an issue 
 If you'd like to contribute to the development of the Raindrop Component, please submit a pull request. We welcome all contributions that align with our project's goals and coding standards.
 
 ## License
-This project is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute the component as long as you adhere to the terms of the license.
+This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
 
 ---
 
