@@ -14,8 +14,8 @@
 - **组件定位**：组件的位置可能会受到显示器分辨率的影响。可能需要调整以获得最佳位置。
 - **透明度**：为了获得最佳的视觉效果，建议将组件修改为透明，并确保启用“无拖动”选项，以防止在使用过程中意外移动。
 ### 兼容性
--**硬盘配置**：请注意，该组件默认设置为识别C、D和E驱动器。如果您的配置不同，您可能需要相应地调整代码中的参数。
--**Steam数据访问**：一些用户报告了访问Steam数据的问题。我们正在积极调查并努力解决代码中的这些问题。
+- **硬盘配置**：请注意，该组件默认设置为识别C、D和E驱动器。如果您的配置不同，您可能需要相应地调整代码中的参数。
+- **Steam数据访问**：一些用户报告了访问Steam数据的问题。我们正在积极调查并努力解决代码中的这些问题。
 
 ## 许可证
 
@@ -55,7 +55,7 @@ Welcome to the rainmeter component, a dynamic and interactive Rainmeter skin des
 For any queries, suggestions, or bug reports, please feel free to open an issue on this repository. We appreciate your feedback and are committed to improving the Rainmeter Component.
 
 ## Contributing
-If you'd like to contribute to the development of the Raindrop Component, please submit a pull request. We welcome all contributions that align with our project's goals and coding standards.
+If you'd like to contribute to the development of the Rainmeter Component, please submit a pull request. We welcome all contributions that align with our project's goals and coding standards.
 
 ## License
 This project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
